@@ -1,5 +1,7 @@
 import '../App.css'
 import './About.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const highlights = [
   { label: 'Founded', value: '1974', note: 'Family atelier in Colombo' },
@@ -86,19 +88,10 @@ const team = [
   },
 ]
 
-function About() {
+function About({ cartCount, onCartClick }) {
   return (
     <div className="about-page" id="about">
-      <header className="nav">
-        <div className="brand">Disal Luxury</div>
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#home">Collections</a>
-          <a href="#home">Atelier</a>
-          <button className="btn ghost">Book a Private Viewing</button>
-        </nav>
-      </header>
+      <Header cartCount={cartCount} onCartClick={onCartClick} />
 
       <header className="about-hero">
         <div className="hero-copy">
@@ -267,9 +260,12 @@ function About() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }
 
 export default About
+
 

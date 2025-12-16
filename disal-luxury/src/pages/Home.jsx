@@ -1,120 +1,112 @@
 import '../App.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-const collections = [
+const gemTypes = [
   {
-    title: 'Heirloom Diamonds',
-    description: 'Brilliant-cut stones set in platinum for timeless radiance.',
+    title: 'Blue Sapphire',
+    description: 'Velvety Ceylon blues with full certification and provenance.',
     image:
-      'https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1604177091072-b7b677a07975?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Sculpted Gold',
-    description: 'Hand-forged 18k gold silhouettes with architectural lines.',
+    title: 'Ruby',
+    description: 'Fiery reds with balanced saturation and expertly cut facets.',
     image:
-      'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1617032213042-09a504f215c9?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Opulent Pearls',
-    description: 'South Sea pearls paired with modern halos and luminous pavé.',
+    title: 'Cat’s Eye',
+    description: 'Distinct chatoyancy sourced from Ratnapura’s famed mines.',
     image:
-      'https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'Emerald',
+    description: 'Lush greens with careful clarity selection and precision setting.',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
   },
 ]
 
-const highlights = [
-  'Certified conflict-free stones',
-  'Bespoke design consultations',
-  'White-glove worldwide delivery',
-  'Lifetime care and resizing',
+const trustBadges = [
+  'NGJA & GIA certified gemologists',
+  'Sri Lanka origin with documented provenance',
+  '50 years of family-run expertise',
+  'Insured worldwide delivery & secure payments',
 ]
 
-const testimonials = [
-  {
-    name: 'Ava M.',
-    note: '“Exquisite craft and flawless service. My ring feels like art.”',
-  },
-  {
-    name: 'Clara L.',
-    note: '“They translated my story into a bespoke necklace I will cherish.”',
-  },
-  {
-    name: 'J. Bennett',
-    note: '“Museum-grade pieces with concierge-level attention to detail.”',
-  },
-]
-
-function Home() {
+function Home({ cartCount, onCartClick }) {
   return (
     <div className="page">
-      <header className="nav">
-        <div className="brand">Disal Luxury</div>
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#collections">Collections</a>
-          <a href="#atelier">Atelier</a>
-          <a href="#stories">Stories</a>
-          <a href="#about">About</a>
-          <button className="btn ghost">Book a Private Viewing</button>
-        </nav>
-      </header>
+      <Header cartCount={cartCount} onCartClick={onCartClick} />
 
       <main id="home">
-        <section className="hero">
+        <section className="hero hero-gem">
           <div className="hero-content">
-            <p className="eyebrow">Haute Joaillerie</p>
+            <p className="eyebrow">Thisla Gem Shop</p>
             <h1>
-              Jewels crafted for
-              <span> luminous moments.</span>
+              Rare Sri Lankan gems
+              <span> chosen for brilliance.</span>
             </h1>
             <p className="lede">
-              Discover heirloom-worthy creations sculpted by master artisans, set
-              with ethically sourced gems and tailored to your story.
+              First impressions matter. We pair heritage sourcing with meticulous cutting so every
+              stone we present is vivid, verified, and ready to become your signature piece.
             </p>
             <div className="hero-actions">
-              <button className="btn primary">Explore Signature Pieces</button>
-              <button className="btn ghost">Design Your Own</button>
+              <button className="btn primary">View Gems</button>
+              <button className="btn ghost">Contact Us</button>
             </div>
             <div className="highlight-bar">
-              {highlights.map((item) => (
-                <div key={item} className="pill">
-                  {item}
-                </div>
-              ))}
+              <div className="pill">Sri Lanka origin</div>
+              <div className="pill">Certified & appraised</div>
+              <div className="pill">Insured shipping</div>
             </div>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual hero-visual-gem">
             <div className="glass-card">
-              <p className="glass-label">Featured Couture</p>
-              <h3>Lumière Necklace</h3>
+              <p className="glass-label">Featured Stone</p>
+              <h3>Ceylon Blue Sapphire</h3>
               <p className="glass-copy">
-                18k white gold, cascading pear-cut diamonds, hand-set in our Paris
-                atelier.
+                Royal blue hue, expertly cut for fire and depth. Accompanied by full provenance and
+                certification.
               </p>
               <div className="stat-row">
                 <div>
-                  <p className="stat-number">112</p>
-                  <p className="stat-label">Handset stones</p>
+                  <p className="stat-number">3.2 ct</p>
+                  <p className="stat-label">Carat weight</p>
                 </div>
                 <div>
-                  <p className="stat-number">4.6 ct</p>
-                  <p className="stat-label">Total weight</p>
+                  <p className="stat-number">VVS</p>
+                  <p className="stat-label">Clarity grade</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="collections" className="section">
+        <section className="section intro">
           <div className="section-header">
-            <p className="eyebrow">Curated Collections</p>
-            <h2>Sculpted brilliance, three ways</h2>
+            <p className="eyebrow">Our Promise</p>
+            <h2>First impression meets lifelong trust</h2>
             <p className="subhead">
-              Distinct signatures, each handcrafted to reveal the depth of rare gems and
-              precious metals.
+              We help you select the right stone—balancing color, clarity, cut, and provenance—so
+              your piece feels as meaningful as the moment it marks.
+            </p>
+          </div>
+        </section>
+
+        <section id="gems" className="section">
+          <div className="section-header">
+            <p className="eyebrow">Key Gem Types</p>
+            <h2>Signature stones we curate</h2>
+            <p className="subhead">
+              From royal sapphires to fiery rubies, each gem is hand-selected and certified for
+              authenticity and brilliance.
             </p>
           </div>
           <div className="collection-grid">
-            {collections.map((item) => (
+            {gemTypes.map((item) => (
               <article className="collection-card" key={item.title}>
                 <div
                   className="collection-image"
@@ -124,99 +116,45 @@ function Home() {
                 <div className="collection-body">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <button className="btn text">View Lookbook</button>
+                  <button className="btn text">View Availability</button>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="atelier" className="section split">
-          <div className="copy">
-            <p className="eyebrow">The Atelier</p>
-            <h2>Where heritage meets innovation</h2>
-            <p className="lede">
-              Our master artisans fuse old-world techniques with contemporary forms,
-              ensuring every facet, prong, and polish carries intention.
-            </p>
-            <ul className="list">
-              <li>Private design salons in Paris, Milan, and Dubai</li>
-              <li>In-house gemologists for bespoke sourcing</li>
-              <li>3D visualization before the first cut</li>
-              <li>Lifetime care, cleaning, and complimentary resizing</li>
-            </ul>
-            <div className="cta-row">
-              <button className="btn primary">Schedule a Consultation</button>
-              <button className="btn ghost">Meet the Designers</button>
-            </div>
-          </div>
-          <div className="atelier-panel">
-            <div className="badge">Maison 1974</div>
-            <div className="atelier-card">
-              <p className="glass-label">Signature Craft</p>
-              <h3>Diamond Pavé Sculpture</h3>
-              <p className="glass-copy">
-                Each stone aligned by hand for seamless light flow and unrivaled fire.
-              </p>
-              <div className="stat-row compact">
-                <div>
-                  <p className="stat-number">72 hrs</p>
-                  <p className="stat-label">Bench time</p>
-                </div>
-                <div>
-                  <p className="stat-number">10 pt</p>
-                  <p className="stat-label">Precision tolerance</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="stories" className="section testimonials">
+        <section id="trust" className="section trust">
           <div className="section-header">
-            <p className="eyebrow">Collector Stories</p>
-            <h2>Whispers from our patrons</h2>
+            <p className="eyebrow">Trust & Credentials</p>
+            <h2>Why collectors choose us first</h2>
           </div>
-          <div className="testimonial-grid">
-            {testimonials.map((item) => (
-              <blockquote className="testimonial" key={item.name}>
-                <p>{item.note}</p>
-                <cite>{item.name}</cite>
-              </blockquote>
+          <div className="trust-grid">
+            {trustBadges.map((item) => (
+              <div className="trust-card" key={item}>
+                {item}
+              </div>
             ))}
           </div>
         </section>
 
         <section className="cta">
           <div className="cta-content">
-            <h2>Reserve a private viewing</h2>
+            <h2>Ready to view our gems?</h2>
             <p>
-              Step into an intimate salon experience. Our concierge will curate pieces
-              aligned to your occasion, style, and story.
+              Schedule a virtual or in-salon viewing. We’ll present certified stones that align with
+              your style, budget, and occasion.
             </p>
             <div className="cta-actions">
-              <button className="btn primary">Book Now</button>
-              <button className="btn ghost">View Boutique Locations</button>
+              <button className="btn primary">View Gems</button>
+              <button className="btn ghost">Contact Us</button>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="footer-brand">
-          <div className="brand">Disal Luxury</div>
-          <p>Fine jewels, crafted with reverence for light and legacy.</p>
-        </div>
-        <div className="footer-links">
-          <a href="#">Boutiques</a>
-          <a href="#">Press</a>
-          <a href="#">Care & Service</a>
-          <a href="#">Contact</a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
 
 export default Home
-
