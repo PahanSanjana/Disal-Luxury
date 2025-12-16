@@ -7,6 +7,7 @@ import Jewelry from './pages/products/Jewelry'
 import JewelryDetails from './pages/products/JewelryDetails'
 import Checkout from './pages/Checkout'
 import Gallery from './pages/Gallery'
+import Contact from './pages/Contact'
 
 const parseRoute = () => {
   if (typeof window === 'undefined') return { page: 'home' }
@@ -19,6 +20,7 @@ const parseRoute = () => {
   if (segment === 'gems-page') return { page: 'gems' }
   if (segment === 'jewelry-page') return { page: 'jewelry' }
   if (segment === 'gallery') return { page: 'gallery' }
+  if (segment === 'contact') return { page: 'contact' }
   if (segment === 'gems' && slug) return { page: 'gem-details', slug }
   if (segment === 'jewelry' && slug) return { page: 'jewelry-details', slug }
   if (segment === 'checkout') return { page: 'checkout' }
@@ -114,6 +116,8 @@ function App() {
       )
     case 'gallery':
       return <Gallery {...sharedProps} />
+    case 'contact':
+      return <Contact {...sharedProps} />
     case 'checkout':
       return (
         <Checkout
