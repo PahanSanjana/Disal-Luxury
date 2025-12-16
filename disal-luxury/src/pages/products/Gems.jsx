@@ -1,7 +1,7 @@
 import '../../App.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import ProductCard from '../../components/ProductCard'
+import GemProductCard from '../../components/GemProductCard'
 import { gems } from '../../data/gems'
 
 function Gems({ cartCount, onCartClick }) {
@@ -20,17 +20,18 @@ function Gems({ cartCount, onCartClick }) {
           </div>
           <div className="collection-grid">
             {gems.map((gem) => (
-              <ProductCard
+              <GemProductCard
                 key={gem.id}
                 image={gem.image}
-                title={gem.name}
-                subtitle={`${gem.carat} • ${gem.color}`}
-                metaLines={[gem.origin, gem.certified]}
+                name={gem.name}
+                carat={gem.carat}
+                color={gem.color}
+                origin={gem.origin}
+                certified={gem.certified}
                 price={gem.price}
                 onViewDetails={() => {
                   window.location.hash = `#gems/${gem.slug}`
                 }}
-                ctaLabel="View Details"
               />
             ))}
           </div>

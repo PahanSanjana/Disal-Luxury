@@ -1,7 +1,7 @@
 import '../../App.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import ProductCard from '../../components/ProductCard'
+import JewelryProductCard from '../../components/JewelryProductCard'
 import { jewelry } from '../../data/jewelry'
 
 const categories = ['Rings', 'Necklaces', 'Bracelets', 'Earrings']
@@ -29,17 +29,16 @@ function Jewelry({ cartCount, onCartClick }) {
                 <h3>{category}</h3>
                 <div className="collection-grid">
                   {items.map((item) => (
-                    <ProductCard
+                    <JewelryProductCard
                       key={item.id}
                       image={item.image}
-                      title={item.name}
-                      subtitle={`${item.gemType} • ${item.metal}`}
-                      metaLines={[`${item.weight}`, `From ${item.price}`]}
+                      name={item.name}
+                      gemType={item.gemType}
+                      metal={item.metal}
                       price={item.price}
                       onViewDetails={() => {
                         window.location.hash = `#jewelry/${item.slug}`
                       }}
-                      ctaLabel="View Details"
                     />
                   ))}
                 </div>

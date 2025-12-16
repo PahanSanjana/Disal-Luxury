@@ -9,6 +9,7 @@ function Header({ cartCount = 0, onCartClick }) {
         <a href="#home">Home</a>
         <a href="#gems-page">Gems</a>
         <a href="#jewelry-page">Jewelry</a>
+        <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
         <button className="btn ghost">Contact Us</button>
         <CartButton count={cartCount} onClick={onCartClick} />
